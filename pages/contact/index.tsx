@@ -8,6 +8,8 @@ import Heading from "../../global/components/heading";
 
 import Button from "../../global/components/btn";
 import { useRouter } from "next/router";
+import { FormEvent, useRef, useState } from "react";
+import { databases, databaseId, contactFormCollectionId, ID } from "@/lib/appwrite";
 
 interface PropTypes {
     width: number;
@@ -27,6 +29,61 @@ const contactDetails = [
 const ContactPage = (props: PropTypes) => {
     console.log(props);
     const router = useRouter();
+    const [err, setErr] = useState("");
+    const [btnDisabled, setBtnDisabled] = useState(false);
+
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [name, setName] = useState("");
+    const [query, setQuery] = useState("");
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    function handleSubmit(e) {
+        e.preventDefault();
+        setErr("");
+        setBtnDisabled(true);
+        if (query.length > 300 || query.length === 0) {
+            setErr("Query must be less than 300 characters");
+            setBtnDisabled(false);
+
+            return;
+        }
+        if (phoneNumber.length !== 10) {
+            setErr("Invalid phone number");
+            setBtnDisabled(false);
+
+            return;
+        }
+        if (name.length <= 2) {
+            setErr("Invalid name");
+            setBtnDisabled(false);
+
+            return;
+        }
+        const body = { phoneNumber, name, query };
+        const promise = databases.createDocument(
+            databaseId,
+            contactFormCollectionId,
+            ID.unique(),
+            body
+        );
+        promise.then(
+            function () {
+                // console.log(response);
+                setErr("");
+                setBtnDisabled(false);
+                setPhoneNumber("");
+                setName("");
+                setQuery("");
+                alert("Successfully submitted! We will get back to you shortly");
+            },
+            function (error) {
+                // alert(error);
+                // console.log(error);
+                setErr("Something went wrong! Please try again.");
+                setBtnDisabled(false);
+            }
+        );
+    }
     return (
         <section className="">
             <ScrollToTop />
@@ -51,18 +108,47 @@ const ContactPage = (props: PropTypes) => {
                             maxWidth={450}
                         />
                         <Space amt={30} />
-                        <input type="number" placeholder="Phone Number" className="input-main" />
-                        <input type="text" placeholder="Name" className="input-main" />
-                        <textarea placeholder="Enter query" className="input-main" rows={5} />
-                        <Space amt={20} />
-                        <Button
-                            text="Submit"
-                            width={90}
-                            height={30}
-                            type="filled"
-                            bgColor="#0056B8"
-                            fgColor="#fff"
-                        />
+                        <p style={{ color: "red" }}>{err}</p>
+                        <form onSubmit={handleSubmit} id="contact-form">
+                            <input
+                                type="number"
+                                placeholder="Phone Number"
+                                className="input-main"
+                                value={phoneNumber}
+                                onChange={(e) => {
+                                    setPhoneNumber(e.target.value);
+                                }}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Name"
+                                className="input-main"
+                                value={name}
+                                onChange={(e) => {
+                                    setName(e.target.value);
+                                }}
+                            />
+                            <textarea
+                                placeholder="Enter query"
+                                className="input-main"
+                                rows={5}
+                                value={query}
+                                onChange={(e) => {
+                                    setQuery(e.target.value);
+                                }}
+                            />
+                            <Space amt={20} />
+                            {!btnDisabled && (
+                                <Button
+                                    text="Submit"
+                                    width={90}
+                                    height={30}
+                                    type="filled"
+                                    bgColor="#0056B8"
+                                    fgColor="#fff"
+                                />
+                            )}
+                        </form>
                     </div>
                     <div className="contact-right">
                         <div className="contact-map-img"></div>
