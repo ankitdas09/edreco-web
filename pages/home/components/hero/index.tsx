@@ -35,8 +35,8 @@ const HeroSection = () => {
                     <p className="hero-text">Learning Today, Leading Tomorrow</p>
                     <Space amt={10} />
                     <p className="hero-subtext">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos minus eligendi
-                        nemo velit nostrum nisi culpa, magnam rerum.
+                        Our mission is to make quality education affordable and accessible for every
+                        Indian.
                     </p>
                     <Space amt={20} />
                     <Button

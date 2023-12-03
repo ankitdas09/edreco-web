@@ -36,7 +36,7 @@ const StartPrepSection = () => {
                 <Space amt={24} />
                 <Heading
                     text={
-                        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "
+                        "Join us at Eduwave Integrated School and take your first step toward academic success. Let us help you achieve your goals and reach your full potential. "
                     }
                     size="1rem"
                     font="PT Sans"

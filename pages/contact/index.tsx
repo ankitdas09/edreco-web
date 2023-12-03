@@ -7,6 +7,7 @@ import ScrollToTop from "../../scrollToTop";
 import Heading from "../../global/components/heading";
 
 import Button from "../../global/components/btn";
+import { useRouter } from "next/router";
 
 interface PropTypes {
     width: number;
@@ -25,7 +26,7 @@ const contactDetails = [
 
 const ContactPage = (props: PropTypes) => {
     console.log(props);
-
+    const router = useRouter();
     return (
         <section className="">
             <ScrollToTop />
@@ -128,9 +129,17 @@ const ContactPage = (props: PropTypes) => {
                 />
                 <Space amt={30} />
                 <div className="branches-container flex column-on-mobile">
-                    <div className="flex-1 m-10">
+                    <div className="flex-1 m-10 branches-left">
                         <div className="branch-img">
-                            <img src="map.webp" alt="" style={{ width: "100%" }} />
+                            <img
+                                src="contact/hajo_map.png"
+                                alt=""
+                                onClick={() => {
+                                    window.open(
+                                        "https://www.google.com/maps/place/26%C2%B015'03.3%22N+91%C2%B031'57.4%22E/@26.2512873,91.5299465,16.99z/data=!4m4!3m3!8m2!3d26.250921!4d91.532603?entry=ttu"
+                                    );
+                                }}
+                            />
                         </div>
                         <div className="branch-details">
                             <Space amt={10} />
@@ -158,9 +167,17 @@ const ContactPage = (props: PropTypes) => {
                             />
                         </div>
                     </div>
-                    <div className="flex-1 m-10">
+                    <div className="flex-1 m-10 branches-right">
                         <div className="branch-img">
-                            <img src="map.webp" alt="" style={{ width: "100%" }} />
+                            <img
+                                src="contact/mukalmua_map.png"
+                                alt=""
+                                onClick={() => {
+                                    window.open(
+                                        "https://www.google.com/maps/place/26%C2%B016'24.6%22N+91%C2%B021'03.2%22E/@26.273514,91.3495639,18.01z/data=!4m4!3m3!8m2!3d26.273506!4d91.35089?entry=ttu"
+                                    );
+                                }}
+                            />
                         </div>
                         <div className="branch-details">
                             <Space amt={10} />
