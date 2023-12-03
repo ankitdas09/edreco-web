@@ -1,0 +1,80 @@
+.card-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  .goals-card-img-container{
+    width: 80px;
+    height: 80px;
+    img{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 1300px) {
+  .card-container{
+    justify-content: center;
+  }
+  .card{
+    // width: 280px !important;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .card-container{
+    justify-content: center;
+  }
+  .card{
+    // width: 260px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .card-container{
+    justify-content: center;
+  }
+  .card{
+    // width: 220px !important;
+  }
+}
+@media screen and (max-width: 1014px) {
+  .card-container{
+    // justify-content: space-between;
+  }
+  .card{
+    // width: 200px !important;
+  }
+}
+
+@media screen and (max-width: 934px) {
+  // .card-container{
+  //   justify-content: space-between;
+  // }
+  .card{
+    // width: 195px !important;
+  }
+}
+
+@media screen and (max-width: 914px) {
+  .card-container{
+    justify-content: center;
+  }
+  .card{
+    // width: 280px !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card-container{
+    justify-content: center;
+  }
+  .card{
+    //  width: 220px !important;
+  }
+}
+@media screen and (max-width: 545px) {
+  .card-container{
+    justify-content: center;
+  }
+  .card{
+    width: 400px !important;
+  }
+}

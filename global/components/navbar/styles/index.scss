@@ -1,0 +1,94 @@
+nav{
+  position: sticky;
+  z-index: 99;
+  top: 0;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #FDF8EE;
+  a{
+    text-decoration: none;
+    color: inherit;
+    
+  }
+  .nav-flex{
+    max-width: 1300px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav-left{
+      .logo{
+        cursor: pointer;
+        width: 155px;
+        height: 60px;
+        background: url('../assets/logo-main.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .nav-right{
+      ul{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        li{
+          margin-right: 20px;
+          &.current-page{
+            // font-weight: 800;
+            text-decoration: underline;
+          }
+          &:hover{
+            color: #4A7D3A;
+            font-weight: 800;
+          }
+        }
+        li:last-child{
+          margin-right: 0px;
+        }
+      }
+    }
+    .nav-right-mobile{
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  nav{
+    .nav-flex{
+
+      .nav-right{
+        display: none;
+      }
+      .nav-right-mobile{
+        display: block;
+        .hamburger-icon{
+          // background-color: aqua;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          background: url(../assets/hamburger-menu.png);
+          background-position: center;
+          background-size: contain;
+          margin-right: 15px;
+        }
+      }
+
+    }
+    .mobile-nav-tray{
+      padding: 0 6%;
+      li{
+        // margin-right: 20px;
+        margin-bottom: 3px;
+        &.current-page{
+          // font-weight: 800;
+          text-decoration: underline;
+        }
+      }
+      li:last-child{
+        margin-right: 0px;
+      }
+      }
+
+  }
+}

@@ -1,0 +1,21 @@
+.list-item{
+  display: flex;
+  margin: 5px 0;
+  justify-content: start;
+  align-items: start;
+  .list-item-check-container{
+    min-width: 18px;
+    min-height: 18px;
+    display: inline-block;
+    margin-right: 12px;
+    margin-top: 3px;
+    background: url("../assets/list-item-check.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

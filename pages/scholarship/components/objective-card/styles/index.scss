@@ -1,0 +1,31 @@
+
+.objective-card{
+  max-width: 360px;
+  margin: 20px;
+  .objective-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .obj-img{
+      min-width: 75px;
+      min-height: 75px;
+      width: 75px;
+      // background-color: #eaeaea;
+      // border-radius: 50%;
+      overflow: hidden;
+      .east-objective-icon{
+        width: 100%;
+      }
+    }
+    .obj-body{
+      margin-left: 10px;
+    }
+  }
+}
+@media screen and (max-width: 454px) {
+  .objective-card{
+    .obj-img{
+      display: none;
+    }
+  }
+}

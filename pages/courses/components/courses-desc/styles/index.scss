@@ -1,0 +1,19 @@
+.container{
+  .course-info-text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .line{
+      width: 60%;
+      height: 1px;
+      background-color: #f5f5f55e;
+    }
+  }
+  .course-info-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
