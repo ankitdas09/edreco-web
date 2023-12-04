@@ -8,6 +8,7 @@ import Footer from "../../global/components/footer";
 import ScrollToTop from "../../scrollToTop";
 import Heading from "../../global/components/heading";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 interface PropTypes {
     width: number;
@@ -29,6 +30,9 @@ const AboutPage = (props: PropTypes) => {
     console.log(props);
     return (
         <section className="">
+            <Head>
+                <title>Edresco - About</title>
+            </Head>
             <ScrollToTop />
             <NavBar variant="white" />
             <Space amt={30} />

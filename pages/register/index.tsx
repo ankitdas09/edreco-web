@@ -6,6 +6,7 @@ import Heading from "../../global/components/heading";
 import Space from "../../global/components/space";
 
 import { ID, collectionId, databaseId, databases } from "../../lib/appwrite";
+import Head from "next/head";
 
 const RegisterPage = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -61,6 +62,9 @@ const RegisterPage = () => {
     }
     return (
         <section className="bg-register flex justify-center align-center">
+            <Head>
+                <title>Edresco - Register</title>
+            </Head>
             <div className="main-register-container rounded-rectangle drop-shadow flex flex-column justify-center align-center">
                 <div className="back-btn-container flex w-100 ">
                     <div

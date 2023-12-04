@@ -10,6 +10,7 @@ import Button from "../../global/components/btn";
 import { useRouter } from "next/router";
 import { FormEvent, useRef, useState } from "react";
 import { databases, databaseId, contactFormCollectionId, ID } from "@/lib/appwrite";
+import Head from "next/head";
 
 interface PropTypes {
     width: number;
@@ -86,6 +87,9 @@ const ContactPage = (props: PropTypes) => {
     }
     return (
         <section className="">
+            <Head>
+                <title>Edresco - Courses</title>
+            </Head>
             <ScrollToTop />
             <NavBar variant="white" />
             <div className="container-sm">

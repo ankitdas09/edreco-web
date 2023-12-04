@@ -10,10 +10,12 @@ import Footer from "../../global/components/footer";
 import ScrollToTop from "../../scrollToTop";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Head from "next/head";
 interface PropTypes {
     width: number;
     height: number;
 }
+
 // interface IVariant{}
 const HomePage = (props: PropTypes) => {
     const navAnimateRef = useRef(null);
@@ -36,6 +38,9 @@ const HomePage = (props: PropTypes) => {
                 position: "relative",
             }}
         >
+            <Head>
+                <title>Edresco - Home</title>
+            </Head>
             <ScrollToTop />
             <NavBar variant={variant} />
             <HeroSection />

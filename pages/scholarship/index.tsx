@@ -15,6 +15,7 @@ import {
     AccordionItemPanel,
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
+import Head from "next/head";
 
 interface PropTypes {
     width: number;
@@ -171,6 +172,9 @@ const ScholarshipPage = (props: PropTypes) => {
     return (
         <section className="bg-blue">
             <ScrollToTop />
+            <Head>
+                <title>Edresco - Scholarship</title>
+            </Head>
             <NavBar variant="white" />
             {props.width >= 600 ? <Space amt={80} /> : <Space amt={30} />}
             <div className="container bg-white drop-shadow rounded-rectangle">

@@ -5,7 +5,7 @@ import Space from "../../global/components/space";
 import Footer from "../../global/components/footer";
 import CoursesDescSection from "./components/courses-desc";
 import ScrollToTop from "../../scrollToTop";
-
+import Head from "next/head";
 interface PropTypes {
     width: number;
     height: number;
@@ -14,6 +14,9 @@ interface PropTypes {
 const CoursePage = (props: PropTypes) => {
     return (
         <div className="bg-blue">
+            <Head>
+                <title>Edresco - Courses</title>
+            </Head>
             <ScrollToTop />
             <NavBar variant="white" />
             <Space amt={30} />

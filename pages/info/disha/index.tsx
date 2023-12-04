@@ -6,6 +6,7 @@ import Button from "../../../global/components/btn";
 import AbsIcon from "../../../global/components/abs-icon";
 import "./index.scss";
 import NavBar from "@/global/components/navbar";
+import Head from "next/head";
 const benefits = [
     {
         heading: "Excellent Faculty",
@@ -72,6 +73,9 @@ const absIcons = [
 const DishaInfo = () => {
     return (
         <>
+            <Head>
+                <title>Edresco - Disha</title>
+            </Head>
             <NavBar variant="white" />
             <div className="bg-course-info">
                 {absIcons.map((c) => {

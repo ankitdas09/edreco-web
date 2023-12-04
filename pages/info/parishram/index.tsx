@@ -6,6 +6,7 @@ import Button from "../../../global/components/btn";
 import AbsIcon from "../../../global/components/abs-icon";
 import "./index.scss";
 import NavBar from "@/global/components/navbar";
+import Head from "next/head";
 // interface PropTypes {
 //     width: number;
 //     height: number;
@@ -82,6 +83,9 @@ const absIcons = [
 const DishaInfo = () => {
     return (
         <>
+            <Head>
+                <title>Edresco - Parishram</title>
+            </Head>
             <NavBar variant="white" />
 
             <div className="bg-course-info">
