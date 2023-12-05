@@ -2,7 +2,8 @@ import Heading from "../../../../global/components/heading";
 import Space from "../../../../global/components/space";
 import CourseInfoCard from "./components/course-info-card";
 import "./styles/index.scss";
-const downloadLink = "https://google.com";
+const downloadLink =
+    "https://drive.google.com/file/d/1LsIsEfNwKkvvT6K-llv1gi2M1MbUnHe9/view?usp=drive_link";
 
 const CoursesDescSection = () => {
     const courseContent = [
@@ -78,18 +79,19 @@ const CoursesDescSection = () => {
                     center={true}
                 />
                 <Space amt={5} />
-
-                <Heading
-                    text="Download Information Brochure"
-                    color="#ffffff"
-                    size="1rem"
-                    font="PT Sans"
-                    fontWeight={800}
-                    maxWidth={600}
-                    center={true}
-                    underline={true}
-                    pointerCursor={true}
-                />
+                <a href={downloadLink} target="_blank">
+                    <Heading
+                        text="Download Information Brochure"
+                        color="#ffffff"
+                        size="1rem"
+                        font="PT Sans"
+                        fontWeight={800}
+                        maxWidth={600}
+                        center={true}
+                        underline={true}
+                        pointerCursor={true}
+                    />
+                </a>
 
                 <Space amt={20} />
 
